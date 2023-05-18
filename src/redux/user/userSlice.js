@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const usersSlice = createSlice({
-    name: 'contacts',
+    name: 'users',
     initialState,
 
     extraReducers: {
