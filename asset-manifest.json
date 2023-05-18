@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/Test_TWEETS/static/css/main.073c9b0a.css",
-    "main.js": "/Test_TWEETS/static/js/main.43501a46.js",
-    "static/js/787.28cb0dcd.chunk.js": "/Test_TWEETS/static/js/787.28cb0dcd.chunk.js",
+    "main.css": "/Test_TWEETS/static/css/main.e6c13ad2.css",
+    "main.js": "/Test_TWEETS/static/js/main.9b6c1ef7.js",
+    "static/media/cardPicture.png": "/Test_TWEETS/static/media/cardPicture.032662a2a907475127d7.png",
     "index.html": "/Test_TWEETS/index.html",
-    "main.073c9b0a.css.map": "/Test_TWEETS/static/css/main.073c9b0a.css.map",
-    "main.43501a46.js.map": "/Test_TWEETS/static/js/main.43501a46.js.map",
-    "787.28cb0dcd.chunk.js.map": "/Test_TWEETS/static/js/787.28cb0dcd.chunk.js.map"
+    "main.e6c13ad2.css.map": "/Test_TWEETS/static/css/main.e6c13ad2.css.map",
+    "main.9b6c1ef7.js.map": "/Test_TWEETS/static/js/main.9b6c1ef7.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.43501a46.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9b6c1ef7.js"
   ]
 }
