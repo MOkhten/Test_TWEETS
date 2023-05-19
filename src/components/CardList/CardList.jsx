@@ -2,7 +2,19 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectUsers } from "redux/user/selector";
 
-import { Card, Img, ImgWrapper, TopImgStyled, Container, CardListConteiner, LogoContainer, UserInfo } from "./CardList.styled";
+import {
+  Card,
+  Img,
+  ImgWrapper,
+  TopImgStyled,
+  Container,
+  CardListConteiner,
+  LogoContainer,
+  UserInfo,
+  Button,
+  LineContainer,
+  InfoContainer
+} from "./CardList.styled";
 
 export const CardList = () => {
   const user  = useSelector(selectUsers);
@@ -22,13 +34,17 @@ console.log(user)
               followers={followers}
             >
               <LogoContainer/>
-              <TopImgStyled/>
-              <ImgWrapper>
+              <TopImgStyled />
+              <LineContainer/>
+              <ImgWrapper/>
                 <Img src={avatar} alt="usersAvatar" />
-                </ImgWrapper>
+              
+              <InfoContainer>
               <UserInfo>{user}</UserInfo>
               <UserInfo>{tweets}  tweets</UserInfo>
               <UserInfo>{followers}  followers</UserInfo>
+                <Button>FOLLOW</Button>
+                </InfoContainer>
             </Card>
           </CardListConteiner>
         );

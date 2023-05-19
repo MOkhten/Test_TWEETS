@@ -1,20 +1,22 @@
-import React from "react";
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchUsers } from 'redux/user/operations';
-import { CardList } from 'components/CardList/CardList';
+import { Routes, Route} from "react-router-dom";
+import { lazy } from 'react';
+import Layout from "components/Layout/Layout";
+
+const Home = lazy(() => import('screens/Home/Home'));
+const Tweets = lazy(() => import("screens/Tweets/Tweets"));
 
 
 function App() {
-   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
- 
-  return (
-    <div >
-      <CardList ></CardList> 
+   return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/tweets" element={<Tweets/>}/>
+          <Route path="*" element={<Home />} />
+          </Route>
+        </Routes>
+     
     </div>
   );
 }
