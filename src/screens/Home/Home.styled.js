@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import imag from '../../images/Colorful-follow-me-word-on-transparent-background-PNG (1).png';
+import imag from '../../images/foolowers.png';
 
 export const ImageWrapper = styled.div`
 background: url(${imag});
-background-size: cover;
-object-fit: cover;
-width: 100%;
-height: 200px;
+background-size: contain;
+background-repeat: no-repeat;
+max-width: 1200px;
+height: 450px;
+margin-bottom: 20px;
 `
 
 export const Title = styled.h1`
