@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from "react";
 import { NavLink } from 'react-router-dom';
-// import Loader from 'components/Loader/Loader.js';
+import {Spiner} from 'components/Spiner';
 
 const Layout = () => {
 
@@ -16,7 +16,7 @@ const Layout = () => {
                 
           </nav>
         </header>
-         <Suspense >
+         <Suspense fallback={<Spiner/>}>
         <Outlet />
       </Suspense>
             </div>

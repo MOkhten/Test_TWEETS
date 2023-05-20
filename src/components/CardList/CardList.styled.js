@@ -11,12 +11,12 @@ text-align: center;
 justify-content: center;
 `;
 
-export const CardListConteiner = styled.div`
-display: flex;
-flex-wrap: wrap;
+export const ButtonConteiner = styled.div`
+display: block;
+width: 100%;
 margin-bottom: 32px;
 margin-right: 32px;
-width: 380px;
+
 `
 export const LogoContainer = styled.div`
 background: url(${logo});
@@ -28,6 +28,12 @@ height: 22px;`
 
 export const Card = styled.div`
 position: relative;
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 32px;
+margin-right: 32px;
+text-align: center;
+justify-content:  center;
 width: 380px;
 height: 517px;
 background-color: #471CA9;

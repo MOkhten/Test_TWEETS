@@ -1,14 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { useSelector } from "react-redux";
-import { selectUsers } from "redux/user/selector";
-
+import { selectUsers, selectIsLoading } from "redux/user/selector";
+import { Spiner } from "components/Spiner";
 import {
   Card,
   Img,
   ImgWrapper,
   TopImgStyled,
   Container,
-  CardListConteiner,
+  ButtonConteiner,
   LogoContainer,
   UserInfo,
   Button,
@@ -17,22 +17,22 @@ import {
 } from "./CardList.styled";
 
 export const CardList = () => {
-  const user  = useSelector(selectUsers);
-console.log(user)
+  const user = useSelector(selectUsers);
+  const isLoading = useSelector(selectIsLoading);
+  
+  const [visibleCards, setVisibleCards] = useState(4);
+  
+  const loadMore = () => {
+    setVisibleCards(prevVisibleCards => prevVisibleCards + 4);
+   
+  };
     return (
         <Container>
             {
         user.length > 0 &&
-          user.map(({ id, avatar, tweets, user, followers }) => {
+          user.slice(0, visibleCards).map(({ id, avatar, tweets, user, followers }) => {
         return (
-          <CardListConteiner key={id}
-          >
-            <Card
-              user={user}
-              avatar={avatar}
-              tweets={tweets}
-              followers={followers}
-            >
+            <Card key={id}>
               <LogoContainer/>
               <TopImgStyled />
               <LineContainer/>
@@ -43,12 +43,19 @@ console.log(user)
               <UserInfo>{user}</UserInfo>
               <UserInfo>{tweets}  tweets</UserInfo>
               <UserInfo>{followers}  followers</UserInfo>
-                <Button>FOLLOW</Button>
+                <Button 
+                  type="button">FOLLOW</Button>
                 </InfoContainer>
             </Card>
-          </CardListConteiner>
         );
-      })}
+          })}
+         {visibleCards < user.length && (
+        <ButtonConteiner >
+        <Button onClick={loadMore}>
+              LOAD MORE</Button>
+            {isLoading && <Spiner />}
+          </ButtonConteiner>
+          )}
         </Container>
     )
 }
