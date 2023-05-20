@@ -20,20 +20,19 @@ margin-right: 32px;
 `
 export const LogoContainer = styled.div`
 background: url(${logo});
-position: relative;
-margin-top: 20px;
-margin-left: 20px;
+position: absolute;
+top: 20px;
+left: 20px;
 width: 76px;
 height: 22px;`
 
 export const Card = styled.div`
 position: relative;
 display: flex;
-flex-wrap: wrap;
-margin-bottom: 32px;
-margin-right: 32px;
 text-align: center;
-justify-content:  center;
+justify-content: center;
+flex-wrap: wrap;
+margin: 32px; 
 width: 380px;
 height: 517px;
 background-color: #471CA9;
@@ -48,7 +47,7 @@ background: linear-gradient(
 `
 export const Img = styled.img`
 position: absolute;
-top: 208px;
+top: 188px;
 left: 159px;
 width: 62px;
 height: 62px;
@@ -61,19 +60,18 @@ export const ImgWrapper = styled.div`
 background: url(${frame});
 background-repeat: no-repeat;
 position: absolute;
-top: 199px;
+top: 179px;
 left: 145px;
-width: 80px;
+width: 90px;
 height: 80px;
-padding-right: 5px;
-padding-left: -5px;
+
 `
 
 export const TopImgStyled = styled.div`
 background: url(${cardPicture});
 background-size: contain;
  position: absolute;
-  margin-top: 6px;
+  top: 28px;
   margin-left:36px;
   width: 308px;
   height: 168px;`
@@ -102,7 +100,7 @@ export const Button = styled.button`
   `
 
 export const LineContainer = styled.div`
- margin-top: 192px;
+ margin-top: 214px;
  width: 380px;
  height: 8px;
  background: url(${line});
@@ -112,4 +110,7 @@ export const LineContainer = styled.div`
 
 export const InfoContainer = styled.div`
  display: block;
- margin-top: 62px;`
+ margin-top: 62px;
+ justify-content: center;
+ text-align: center;
+ align-items: center;`

@@ -1,7 +1,10 @@
+import { Title, ImageWrapper } from "./Home.styled";
+
 const Home = () => {
-    return (<>
-        <h1>Welcome Page</h1>
-    </>)
+    return (<div>
+        <Title>Welcome to this app, you can see our tweet cards and follow them</Title>
+        <ImageWrapper/>
+    </div>)
 }
 
 export default Home;
