@@ -99,6 +99,20 @@ export const Button = styled.button`
   cursor: pointer;
   `
 
+export const FollowBtn = styled.button`
+  background-color: #5CD3A8;
+  padding: 14px 56px 14px 56px;
+  color: #373737;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 10.31px;
+  border-color: transparent;
+  margin-top: 26px;
+  margin-bottom: 34px;
+  cursor: pointer;
+`
+
 export const LineContainer = styled.div`
  margin-top: 214px;
  width: 380px;
