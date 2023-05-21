@@ -64,7 +64,7 @@ export const CardList = () => {
               <UserInfo>{user}</UserInfo>
               <UserInfo>{tweets}  tweets</UserInfo>
            
-              <UserInfo> {isFollowed ? (followers + 1) : (followers)} FOLLOWERS  followers</UserInfo>
+              <UserInfo> {isFollowed ? (followers + 1) : (followers)} followers</UserInfo>
                 {isFollowed ? (
         <FollowBtn
           onClick={() => handleFollow(id)} type="button"
