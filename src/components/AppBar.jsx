@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function ButtonAppBar() {
-    
+   
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color="secondary">
@@ -26,7 +26,8 @@ export default function ButtonAppBar() {
                 sx={{ my: 2, color: 'white', display: 'flex', mx: 'auto' }}
               >
                 TWEETS
-              </Button>
+          </Button>
+          
         </Toolbar>
       </AppBar>
     </Box>
