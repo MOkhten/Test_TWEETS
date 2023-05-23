@@ -5,7 +5,8 @@ export const ImageWrapper = styled.div`
 background: url(${imag});
 background-size: contain;
 background-repeat: no-repeat;
-width: 100%;
+max-width: 1200px;
+margin: auto;
 height: 450px;
 margin-bottom: 20px;
 `
