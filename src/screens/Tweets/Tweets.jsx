@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
-import { selectUsers} from "redux/user/selector";
+// import { useNavigate } from 'react-router-dom';
+// import { useSelector } from "react-redux";
+// import { selectUsers} from "redux/user/selector";
 import { fetchUsers } from 'redux/user/operations';
 import { CardList } from 'components/CardList/CardList';
 import { Container } from '@mui/material';
@@ -10,8 +10,8 @@ import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { changeFilter } from "redux/user/filterSlice";
 
 const Tweets = () => {
-  const navigate = useNavigate();
-  const users = useSelector(selectUsers);
+  // const navigate = useNavigate();
+  // const users = useSelector(selectUsers);
   const [filter, setFilter] = useState('');
   const filters = ['Show all', 'Follow', 'Followings'];
   const dispatch = useDispatch();
