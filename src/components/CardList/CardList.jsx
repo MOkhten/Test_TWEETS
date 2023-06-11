@@ -14,7 +14,7 @@ import {
   Button,
   FollowBtn,
   LineContainer,
-  InfoContainer
+  InfoContainer,
 } from "./CardList.styled";
 
 
@@ -46,7 +46,8 @@ export const CardList = () => {
    
   };
     return (
-        <Container>
+      <Container>
+        
             {
         user.length > 0 &&
           user.slice(0, visibleCards).map(({ id, avatar, tweets, user, followers }) => {

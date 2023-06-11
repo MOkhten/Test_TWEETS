@@ -3,6 +3,7 @@ import cardPicture from '../../images/cardPicture.png';
 import logo from '../../images/Vector.png';
 import frame from '../../images/Ellipse 1 (Stroke).png';
 import line from '../../images/Rectangle 1.png';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
 display: flex;
@@ -97,6 +98,9 @@ export const Button = styled.button`
   margin-top: 26px;
   margin-bottom: 34px;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1)
+  }
   `
 
 export const FollowBtn = styled.button`
@@ -111,7 +115,26 @@ export const FollowBtn = styled.button`
   margin-top: 26px;
   margin-bottom: 34px;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1)
+  }
 `
+export const BackLinkHref = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 8px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  cursor: pointer;
+  color: #373737;
+  transition: color 250ms ease-in-out;
+  &:hover {
+    color: #5736a3;
+  }`
 
 export const LineContainer = styled.div`
  margin-top: 214px;

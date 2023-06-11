@@ -5,12 +5,14 @@ import { useDispatch } from 'react-redux';
 // import { selectUsers} from "redux/user/selector";
 import { fetchUsers } from 'redux/user/operations';
 import { CardList } from 'components/CardList/CardList';
+import { BackLinkHref } from 'components/CardList/CardList.styled';
 import { Container } from '@mui/material';
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { changeFilter } from "redux/user/filterSlice";
+import { BsArrowLeft } from 'react-icons/bs';
 
 const Tweets = () => {
-  // const navigate = useNavigate();
+//   const navigate = useNavigate();
   // const users = useSelector(selectUsers);
   const [filter, setFilter] = useState('');
   const filters = ['Show all', 'Follow', 'Followings'];
@@ -30,9 +32,10 @@ const Tweets = () => {
   return (
     <div >
       <Container sx={{ mt: '5px' }}>
-			{/* <BtnGoBack type="button" onClick={() => navigate('/')}>
-				GO BACK
-			</BtnGoBack> */}
+			<BackLinkHref to={`/`}>
+              <BsArrowLeft />
+              GO BACK
+            </BackLinkHref>
 			<FormControl
 				variant="standard"
 				sx={{
