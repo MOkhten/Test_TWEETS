@@ -7,7 +7,6 @@ import {
   Img,
   ImgWrapper,
   TopImgStyled,
-  Container,
   ButtonConteiner,
   LogoContainer,
   UserInfo,
@@ -15,14 +14,18 @@ import {
   FollowBtn,
   LineContainer,
   InfoContainer,
+  Container
 } from "./CardList.styled";
+import Box from '@mui/material/Box';
+import FormControl from '@mui/material/FormControl';
+import NativeSelect from '@mui/material/NativeSelect';
 
 
 export const CardList = () => {
   const user = useSelector(selectUsers);
 
   const isLoading = useSelector(selectIsLoading);
-  
+  const [filter, setFilter] = useState("show all");
   const [visibleCards, setVisibleCards] = useState(4);
   const [followedUsers, setFollowedUsers] = useState(JSON.parse(window.localStorage.getItem('followedUsers')) || {});
 
@@ -40,19 +43,47 @@ export const CardList = () => {
     });
   };
 
+  const filterUsers = (user) => {
+    switch (filter) {
+      case "followings":
+        return user.filter(({ id }) => followedUsers[id]);
+      case "follow":
+        return user.filter(({ id }) => !followedUsers[id]);
+      default:
+        return user;
+    }
+  };
+
+  const filteredUsers = filterUsers(user);
   
   const loadMore = () => {
     setVisibleCards(prevVisibleCards => prevVisibleCards + 4);
    
   };
     return (
-      <Container>
+      <>
+         <Box sx={{ minWidth: 120 }}>
+      <FormControl sx={{ m: 1, width: 300 }}>
         
+        <NativeSelect
+    
+           id="filter"
+              name="filterForm"
+             value={filter} onChange={(e) => setFilter(e.target.value)}
+        >
+          <option value="show all">Show All</option>
+              <option value="follow">follow</option>
+              <option value="followings">Following</option>
+        </NativeSelect>
+      </FormControl>
+    </Box>
+      <Container>
             {
         user.length > 0 &&
-          user.slice(0, visibleCards).map(({ id, avatar, tweets, user, followers }) => {
+          filteredUsers.slice(0, visibleCards).map(({ id, avatar, tweets, user, followers }) => {
             const isFollowed = followedUsers[id] || false;
-        return (
+            return (
+          
           <Card key={id}
           >
               <LogoContainer/>
@@ -83,6 +114,7 @@ export const CardList = () => {
             </Card>
         );
           })}
+          
          {visibleCards < user.length && (
         <ButtonConteiner >
         <Button onClick={loadMore}>
@@ -90,6 +122,7 @@ export const CardList = () => {
             {isLoading && <Spiner />}
           </ButtonConteiner>
           )}
-        </Container>
+          </Container>
+        </>
     )
 }
